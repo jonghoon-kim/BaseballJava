@@ -21,10 +21,7 @@ public class Main {
                 break;
         }
 
-        System.out.println("[정답]");
-        for (int i = 0; i < DIGIT; i++)
-            System.out.print(answers[i] + " ");
-        System.out.println();
+        printNumbers("[정답]", answers);
 
 
         int tryCount = 0;
@@ -39,10 +36,7 @@ public class Main {
             for (int i = 0; i < DIGIT; i++)
                 guesses[i] = scanner.nextInt();
 
-            System.out.println("[추측]");
-            for (int i = 0; i < DIGIT; i++)
-                System.out.print(guesses[i] + " ");
-            System.out.println();
+            printNumbers("[추측]", guesses);
 
 
             // 결과를 계산한다.
@@ -70,5 +64,12 @@ public class Main {
 
         // 도전횟수를 출력한다.
         System.out.println("도전횟수 : " + tryCount);
+    }
+
+    private static void printNumbers(String prefix, int[] numbers) {
+        System.out.println(prefix);
+        for (int i = 0; i < DIGIT; i++)
+            System.out.print(numbers[i] + " ");
+        System.out.println();
     }
 }
