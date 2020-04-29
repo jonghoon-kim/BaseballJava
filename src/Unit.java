@@ -1,12 +1,12 @@
-public class Unit {
+public abstract class Unit {
+    public Unit(int hp) {
+        this.hp = hp;
+    }
+
     private int hp;
 
     public int getHP() {
         return hp;
-    }
-
-    public Unit(int hp) {
-        this.hp = hp;
     }
 
     public void getDamaged(int damage){
