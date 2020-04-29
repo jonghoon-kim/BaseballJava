@@ -1,6 +1,8 @@
 public abstract class Unit {
-    public Unit(int hp) {
+    public Unit(int hp)
+    {
         this.hp = hp;
+        speed = 3;
     }
 
     private int hp;
@@ -15,4 +17,6 @@ public abstract class Unit {
             hp--;
         }
     }
+
+    protected int speed;
 }
