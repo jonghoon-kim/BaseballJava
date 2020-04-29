@@ -1,29 +1,39 @@
+import java.util.Random;
+
 public class Main {
 
-    public static final int MAX_NUMBER = 10;
-    public static final int DIGIT = 3;
-
     public static void main(String[] args) {
-        Answer answer = new Answer();
-        answer.generate();
-        answer.print();
+        Unit m1 = new Marine();
+        Unit f1 = new Firebat();
 
-        int tryCount = 0;
-        while (true){
-            tryCount++;
 
-            Guess guess = new Guess();
-            guess.input();
-            guess.print();
+        getDamagedSeveralTimes(m1, 3);
+        getDamagedSeveralTimes(f1, 3);
 
-            Result result = new Result();
-            result.calculate(answer, guess);
-            result.print();
-
-            if (result.isGood())
-                break;
+        Unit[] units = new Unit[2];
+        units[0] = new Marine();
+        units[1] = new Firebat();
+        for (int i = 0; i < units.length; i++) {
+            units[i].getDamaged(2);
         }
-
-        System.out.println("도전횟수 : " + tryCount);
     }
-}
+
+    private static void getDamagedSeveralTimes(Unit unit, int times) {
+        Random random = new Random();
+
+        for (int i = 0; i < times; i++) {
+            int damage = random.nextInt(3) + 1;
+            unit.getDamaged(damage);
+
+            if (unit.getHP() == 0)
+            {
+                System.out.println("dead");
+                break;
+            }
+            else
+            {
+                System.out.println(unit.getHP());
+            }
+        }
+    }
+
