@@ -10,8 +10,8 @@ public class Main {
         getDamagedSeveralTimes(z1, 3);
         getDamagedSeveralTimes(f1, 3);
 
-        makeItFaster((Marine) m1, 2);
-        makeItFaster(z1, 2);
+//        makeItFaster((Marine) m1, 2);
+//        makeItFaster(z1, 2);
     }
 
     private static void getDamagedSeveralTimes(Unit unit, int times) {
@@ -26,12 +26,7 @@ public class Main {
                 System.out.println("dead");
                 break;
             } else {
-                if (unit instanceof ProtossUnit){
-                    ProtossUnit protossUnit = (ProtossUnit) unit;
-                    System.out.println(unit.getHP() + "/" + protossUnit.getShield());
-                }
-                else
-                    System.out.println(unit.getHP());
+                System.out.println(unit.getStatus());
             }
         }
     }

@@ -19,4 +19,12 @@ public abstract class Unit {
     }
 
     protected int speed;
+
+    protected String getUnitName(){
+        return "John Doe";
+    }
+
+    public String getStatus(){
+        return getUnitName() +  " HP:" + getHP();
+    }
 }

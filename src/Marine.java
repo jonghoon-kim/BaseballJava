@@ -16,4 +16,9 @@ public class Marine extends Unit implements Fastable{
     public int getSpeed() {
         return speed;
     }
+
+    @Override
+    protected String getUnitName() {
+        return "Marine";
+    }
 }

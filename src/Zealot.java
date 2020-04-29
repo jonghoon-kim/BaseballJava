@@ -16,4 +16,9 @@ public class Zealot extends ProtossUnit implements Fastable {
     public int getSpeed() {
         return speed;
     }
+
+    @Override
+    public String getStatus() {
+        return "[Zealot] HP:" + getHP() + ", Shield:" + getShield();
+    }
 }
